@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <header>
+    <!-- not in use - see JQuery equivalent Below -->
     <script>
         window.addEventListener("DOMContentLoaded", () => {
+            return; // comment out to use this block.
+
             const btn = document.getElementById("btnSubmit");
             if (!btn){
                 alert("Submit Button not found!");
                 return;
             }
-            else
-            {
-                //alert("Button Found!");
-            }
+            //alert("Button Found!");
+            
             btn.addEventListener("click", () =>
             {
                 const email = document.getElementById('txtEmail').value;
@@ -20,6 +21,27 @@
             });
         });
     </script>
+    <!-- JQuery-ized script from above -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+     <script>
+        $(function () 
+        {
+            const $btn = $("#btnSubmit");
+            if ($btn.length === 0) {
+                alert("Submit Button not found!");
+                return;
+            }
+            // alert("Button Found!");
+
+            $btn.on("click", function () 
+            {
+                const email = $("#txtEmail").val();
+                const name = $("#txtName").val();
+                const comment = $("#txtComments").val();
+            alert("Name : " + name + "\nEmail : " + email + "\nComment: " + comment);
+            });
+        });
+     </script>
 </header>
 <body>
     <div class="ContactUs-photo">
