@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<header>
+    <!-- getBootStrap.com -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</header>
+<body class="vh-100">
+    <!-- Example -- https://getbootstrap.com/docs/5.3/components/navbar/ -->
+     <div class="container-fluid h-100">
+        <div class="row h-100">
+
+            <nav class="col-2 bg-light border-end p-3">
+            <div class="container-fluid">      
+                <div class="" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" id="aHome" onclick="loadPage('aHome', 'Home.html')">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" id="aEvent" onclick="loadPage('aEvent','Events.html')">Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" id="aContact" onclick="loadPage('aContact','ContactUs.html')">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+            
+            </nav>
+            <main class="col p-0">
+                <iframe id="contentFrame" src="ContactUs.html" class="w-100 h-100 border-0"></iframe>
+                <script>
+                    let el = null;
+                    function loadPage(id, page) {
+                        //alert("Running!");
+        
+                        if (el !== null) {
+                            el.classList.remove("active");
+                            el.removeAttribute("aria-current");
+                        }                  
+                        
+                        el = document.getElementById(id);
+                        if (!el) { alert("Unable to locate" + id); }
+                        el.classList.add("active");
+                        el.setAttribute("aria-current", "page");
+        
+                        document.getElementById("contentFrame").src = page;
+                    }
+                </script>
+            </main>
+
+        </div>
+     </div>
+</body>

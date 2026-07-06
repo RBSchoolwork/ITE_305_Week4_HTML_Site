@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<header>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("btnSubmit");
+            if (!btn){
+                alert("Submit Button not found!");
+                return;
+            }
+            else
+            {
+                //alert("Button Found!");
+            }
+            btn.addEventListener("click", () =>
+            {
+                const email = document.getElementById('txtEmail').value;
+                const name = document.getElementById('txtName').value;
+                const comment = document.getElementById('txtComments').value;
+                alert("Name : " + name + "\nEmail : " + email + "\nComment: " + comment);
+            });
+        });
+    </script>
+</header>
+<body>
+    <div class="ContactUs-photo">
+        <img src="" alt="Contact Us Photo" />
+    </div>
+    <div class="ContactUs">
+        <form>
+            <label>Name</label>
+            <input type="text" id="txtName" class="input-text"/>
+            <label>Email Address</label>
+            <input type="text" id="txtEmail" class="input-text"/>
+            <label>Comments</label>
+            <input type="text" id="txtComments" class="input-text input-text-area"/>
+        </form>
+        <button id="btnSubmit">Submit</button>
+    </div>
+</body>
